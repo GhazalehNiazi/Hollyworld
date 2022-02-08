@@ -5,18 +5,31 @@
 }
 .posters {
   display : flex;
-  /* align-items: center; */
+  align-items: flex-end;
   position: absolute;
-  top: 15rem;
-  left:50rem;
+  top: 10rem;
+  left:42rem;
   overflow-y: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
 }
-.posters img {
-  width: 100%;
-  max-height: 10rem;
-  margin: 1rem;
-  margin-left: 0;
+.posters::-webkit-scrollbar {
+  display: none;
 }
 
+.posterImg {
+  width: 100%;
+  max-height: 14rem;
+  margin: 1.5rem;
+  margin-left: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.637) 10px 10px 15px, rgba(0, 0, 0, 0.425) 10px 6px 6px;
+  transition:all 450ms ease-in;
+  
+}
+
+.active{
+  max-height:18rem ;
+  border-radius: 0;
+
+}
