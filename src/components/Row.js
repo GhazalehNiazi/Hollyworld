@@ -31,7 +31,7 @@ const Row = ({ fetchUrl, Active }) => {
         <div
           className={classes.main}
           style={{
-            transition:'all 450ms ease-in',
+            transition: "all 450ms",
             objectFit: "contain",
             backgroundSize: "cover",
             backgroundPosition: "center center",
