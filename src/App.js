@@ -1,11 +1,13 @@
 import "./App.css";
 import requests from "./API/request";
-import Row from "./components/Row";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
     <div className="App">
-      <Row fetchUrl={requests.fetchTrending} />
+      <MainPage title='Trending' fetchUrl={requests.fetchTrending} Active/>
+      <MainPage title='Top Rated' fetchUrl={requests.fetchTopRated} />
+      <MainPage title='netflix Originals' fetchUrl={requests.fetchNetflixOriginals} />
     </div>
   );
 }
