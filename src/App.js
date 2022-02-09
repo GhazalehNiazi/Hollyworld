@@ -16,11 +16,11 @@ function App() {
     //prettier ignore 
     <div className="App">
       <div className="container">
-        <Genres onSelect={clickHandler.bind(this)} title="Trending" Active={title === 'trending'|| false}/>
+        <Genres onSelect={clickHandler.bind(this)} title="Trending" Active={title === 'Trending'|| false}/>
         <Genres onSelect={clickHandler.bind(this)} title="Top Rated" Active={title === 'Top Rated' || false}/>
         <Genres onSelect={clickHandler.bind(this)} title="netflix Originals" Active={title === 'netflix Originals' || false}/>
       </div>
-      <MainPage title="Trending" fetchUrl={requests.fetchTrending} Active={title === 'trending' || false} />
+      <MainPage title="Trending" fetchUrl={requests.fetchTrending} Active={title === 'Trending' || false} />
       <MainPage title="Top Rated" fetchUrl={requests.fetchTopRated} Active={title === 'Top Rated' || false}/>
       <MainPage
         title="netflix Originals"
