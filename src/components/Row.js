@@ -52,7 +52,7 @@ const Row = ({ fetchUrl, Active , title}) => {
                   key={movie.id}
                   alt={movie.name}
                 />
-                <div>description</div>
+                <div className={classes.movieName}>{movie.name || movie.title}</div>
                 </div>
               );
             })}
