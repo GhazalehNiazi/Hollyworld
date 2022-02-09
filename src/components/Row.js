@@ -42,6 +42,7 @@ const Row = ({ fetchUrl, Active , title}) => {
             {movies.map((movie) => {
               console.log(movie === currentMovie);
               return (
+                <div className={classes.movieContainer}>
                 <img
                   onClick={clickHandler.bind(this, movie)}
                   className={`${classes.posterImg} ${
@@ -51,6 +52,8 @@ const Row = ({ fetchUrl, Active , title}) => {
                   key={movie.id}
                   alt={movie.name}
                 />
+                <div>description</div>
+                </div>
               );
             })}
           </div>
