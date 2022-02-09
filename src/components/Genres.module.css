@@ -1,8 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 .title{
-    color:rgb(208, 215, 231);
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: flex-start; */
-     /* position: fixed; */
+    color:rgb(142, 144, 148);
+    font-size: 1.5rem;
+    transition: all 450ms ease-in;
+    cursor: pointer;
 
+}
+.active{
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
 }
