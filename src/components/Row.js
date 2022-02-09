@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "../API/axios";
 import classes from "./Row.module.css";
-
-const Row = ({ fetchUrl, Active }) => {
+import Genres from "./Genres";
+const Row = ({ fetchUrl, Active , title}) => {
   const baseURL = "https://image.tmdb.org/t/p/original/";
   const [movies, setMovies] = useState([]);
   const [currentMovie, setCurrentMovie] = useState([]);
@@ -31,7 +31,7 @@ const Row = ({ fetchUrl, Active }) => {
         <div
           className={classes.main}
           style={{
-            transition: "all 450ms",
+            transition: "all 600ms",
             objectFit: "contain",
             backgroundSize: "cover",
             backgroundPosition: "center center",
