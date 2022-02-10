@@ -1,8 +1,13 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useEffect, useState } from "react";
 import axios from "../API/axios";
 import classes from "./Row.module.css";
-import Genres from "./Genres";
-const Row = ({ fetchUrl, Active , title}) => {
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import { EffectCoverflow, Pagination } from "swiper";
+
+const Row = ({ fetchUrl, Active, title }) => {
   const baseURL = "https://image.tmdb.org/t/p/original/";
   const [movies, setMovies] = useState([]);
   const [currentMovie, setCurrentMovie] = useState([]);
@@ -38,25 +43,42 @@ const Row = ({ fetchUrl, Active , title}) => {
             backgroundImage: `url('https://image.tmdb.org/t/p/original/${currentMovie?.backdrop_path}')`,
           }}
         >
-          <div className={classes.posters}>
+          <Swiper
+            className = {`${classes.posters} mySwiper`}
+            slidesPerView={3}
+            spaceBetween={50}
+            // centeredSlides={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+
+          >
             {movies.map((movie) => {
-              console.log(movie === currentMovie);
+              //   console.log(movie === currentMovie);
               return (
-                <div className={classes.movieContainer}>
-                <img
-                  onClick={clickHandler.bind(this, movie)}
-                  className={`${classes.posterImg} ${
-                    movie === currentMovie && `${classes.active}`
-                  }`}
-                  src={`${baseURL}${movie.poster_path}`}
-                  key={movie.id}
-                  alt={movie.name}
-                />
-                <div className={classes.movieName}>{movie.name || movie.title}</div>
-                </div>
+                <SwiperSlide
+                  className={classes.movieContainer}
+                >
+                  <img
+                    onClick={clickHandler.bind(this, movie)}
+                    // className={`${classes.posterImg} ${
+                    //   movie === currentMovie && `${classes.active}`
+                    // }`}
+                    src={`${baseURL}${movie.poster_path}`}
+                    key={movie.id}
+                    alt={movie.name}
+                    className={classes.posterImg}
+                  />
+                  <div className={classes.movieName}>
+                    {movie.name || movie.title}
+                  </div>
+                </SwiperSlide>
               );
+
+          
             })}
-          </div>
+          </Swiper>
         </div>
       )}
     </React.Fragment>
