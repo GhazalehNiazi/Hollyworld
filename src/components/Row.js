@@ -5,7 +5,7 @@ import classes from "./Row.module.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination,Keyboard,Navigation } from "swiper";
 
 const Row = ({ fetchUrl, Active, title }) => {
   const baseURL = "https://image.tmdb.org/t/p/original/";
@@ -44,14 +44,27 @@ const Row = ({ fetchUrl, Active, title }) => {
           }}
         >
           <Swiper
+          // effect={"coverflow"}
             className = {`${classes.posters} mySwiper`}
             slidesPerView={3}
-            spaceBetween={50}
-            // centeredSlides={true}
+            spaceBetween={30}
+            // coverflowEffect={{
+            //   rotate: 1,
+            //   stretch: 10,
+            //   depth: 50,
+            //   modifier: 3,
+              // slideShadows: true,
+            // }}
+            centeredSlides={true}
+            keyboard={{
+              enabled: true,
+            }}
+            navigation={true}
             pagination={{
               clickable: true,
+              dynamicBullets: true,
             }}
-            modules={[Pagination]}
+            modules={[Keyboard,Pagination]}
 
           >
             {movies.map((movie) => {

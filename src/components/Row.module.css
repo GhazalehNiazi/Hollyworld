@@ -10,8 +10,8 @@
 }
 .posters {
   position: absolute;
-  left: 20rem;
-  top: 11rem;
+  left: 24%;
+  top: 32%;
   width: 50%;
 }
 
@@ -27,9 +27,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.397) 5px 5px 8px, rgba(0, 0, 0, 0.384) 4px 6px 5px;
   transition: all 500ms ease;
-}
-.posterImage {
-  width: 100%;
+  cursor: pointer;
 }
 
 .movieName {
